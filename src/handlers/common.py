@@ -5,6 +5,8 @@ from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery
 from aiogram.filters import CommandStart
 
+from utils import respondEvent
+
 
 router = Router(name=__name__)
 
@@ -13,4 +15,4 @@ router = Router(name=__name__)
 @router.callback_query(F.data == 'start')
 @router.message(F.text & (~F.text.startswith("/")))
 async def start(event: Message | CallbackQuery) -> None:
-    await event.reply('Hello, world!')
+    await respondEvent(event, text='Hello, World!')
