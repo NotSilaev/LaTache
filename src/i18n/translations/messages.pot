@@ -1,0 +1,23 @@
+# Translations template for LaTache.
+# Copyright (C) 2025 Menteral
+# This file is distributed under the same license as the LaTache project.
+# FIRST AUTHOR <notsilaev@gmail.com>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: LaTache 0.0.0\n"
+"Report-Msgid-Bugs-To: notsilaev@gmail.com\n"
+"POT-Creation-Date: 2025-09-26 23:01+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Nikita Silaev <notsilaev@gmail.com>\n"
+"Language-Team: Nikita Silaev <notsilaev@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: handlers/common.py:21
+msgid "Hello, World!"
+msgstr ""
+
