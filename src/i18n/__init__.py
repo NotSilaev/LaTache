@@ -5,6 +5,7 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.types.user import User
 
 import gettext
+import functools
 
 
 LANGUAGES = ["en", "ru"]
@@ -24,12 +25,13 @@ def getTranslator(lang: str):
 def language_detector(func):
     "Returns the appropriate translator function, depending on the user's Telegram interface language."
 
-    async def wrapper(*args):
+    @functools.wraps(func)
+    async def wrapper(*args, **kwargs):
         event: Message | CallbackQuery = args[0]
         user: User = event.from_user
         language_code: str = user.language_code
         if language_code not in ["en", "ru"]:
             language_code = "en"
         translator = getTranslator(lang=language_code)
-        return (await func(*args, _ = translator))
+        return (await func(*args, **kwargs, _ = translator))
     return wrapper
